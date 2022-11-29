@@ -1,0 +1,27 @@
+name: Broadcast
+
+on:
+  push:
+    branches:
+      - develop
+
+ workflow_dispatch:
+  
+jobs:
+  
+  broadcast:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: trigger
+      uses: actions/github-script@v6
+      with:
+          github-token: ${{ secrets.PAT_TOKEN }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: 'kwabenantim',
+              repo: 'ApPredict',
+              workflow_id: 'ubuntu-2004.yml',
+              ref: 'master'
+            })
+          
