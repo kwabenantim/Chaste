@@ -1047,7 +1047,7 @@ set (CPACK_PACKAGE_DESCRIPTION "
  and scientific computing.
  .
  The main website for Chaste can be found at
- http://www.cs.ox.ac.uk/chaste
+ https://chaste.github.io
 ")
 set (CPACK_PACKAGE_VERSION_MAJOR "${Chaste_VERSION_MAJOR}")
 set (CPACK_PACKAGE_VERSION_MINOR "${Chaste_VERSION_MINOR}")

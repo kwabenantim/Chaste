@@ -1496,8 +1496,6 @@ void DistributedTetrahedralMesh<ELEMENT_DIM, SPACE_DIM>::ParMetisLibraryNodeAndE
      *  * Hence the use of random element reading is only useful for the niche of moderately large meshes with
      *    process counts in the thousands.
      *  Hence BIN file element permuting is deprecated - we just read the file in order.
-     *  See
-     *  https://chaste.cs.ox.ac.uk/trac/browser/trunk/mesh/src/common/DistributedTetrahedralMesh.cpp?rev=19291#L1459
      */
 
     for (unsigned element_number = 0; element_number < mTotalNumElements; element_number++)
