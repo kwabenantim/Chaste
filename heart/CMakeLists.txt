@@ -68,11 +68,9 @@ foreach(dyn_source ${dyn_sources})
     set_property(TARGET ${dyn_source_name} PROPERTY CXX_STANDARD_REQUIRED ON)
     set_property(TARGET ${dyn_source_name} PROPERTY CMAKE_CXX_EXTENSIONS OFF)
     if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-        target_link_libraries(${dyn_source_name} LINK_PRIVATE "-Wl,-undefined,dynamic_lookup")
-        #set_target_properties(${dyn_source_name} PROPERTIES LINK_FLAGS "-Wl,-undefined,dynamic_lookup")
+        target_link_options(${dyn_source_name} PRIVATE "-Wl,-undefined,dynamic_lookup")
     else()
-        #target_link_libraries(${dyn_source_name} LINK_PRIVATE "-Wl,--undefined")
-        set_target_properties(${dyn_source_name} PROPERTIES LINK_FLAGS "-Wl,--unresolved-symbols=ignore-all")
+        target_link_options(${dyn_source_name} PRIVATE "-Wl,--unresolved-symbols=ignore-all")
     endif()
 
     # add dynamic models to the heart_tests, Continuous, and individual test targets
