@@ -72,7 +72,7 @@ foreach(dyn_source ${dyn_sources})
         #set_target_properties(${dyn_source_name} PROPERTIES LINK_FLAGS "-Wl,-undefined,dynamic_lookup")
     else()
         #target_link_libraries(${dyn_source_name} LINK_PRIVATE "-Wl,--undefined")
-        set_target_properties(${dyn_source_name} PROPERTIES LINK_FLAGS "-Wl,--undefined")
+        set_target_properties(${dyn_source_name} PROPERTIES LINK_FLAGS "-Wl,--unresolved-symbols=ignore-all")
     endif()
 
     # add dynamic models to the heart_tests, Continuous, and individual test targets
