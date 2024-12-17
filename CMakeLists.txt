@@ -56,6 +56,8 @@ project (Chaste VERSION 2024.2)
 set (Chaste_VERSION_MAJOR 2024 CACHE STRING "Chaste major version number")
 set (Chaste_VERSION_MINOR 2 CACHE STRING "Chaste minor version number")
 
+message(STATUS "Linker: ${CMAKE_LINKER}")
+
 include (ChasteHostOperatingSystem)
 include (ChasteBuildTypes)
 
